@@ -1,7 +1,9 @@
 const express = require('express')
+var cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 let issues = [
   {
@@ -21,7 +23,7 @@ let issues = [
   }
 ]
 
-app.get('/', (request, response) => {
+app.get('/api/v1/issues', (request, response) => {
   response.json(issues)
 })
 
