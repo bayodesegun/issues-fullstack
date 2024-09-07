@@ -1,0 +1,25 @@
+{
+  "name": "issues-fullstack",
+  "version": "1.0.0",
+  "description": "A simple full-stack app for handling issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "issues",
+    "full-stack"
+  ],
+  "author": "Bayode Aderinola",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
