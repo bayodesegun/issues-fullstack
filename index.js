@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 
+app.use(express.json())
+
 let issues = [
   {
     id: "1",
@@ -23,7 +25,7 @@ app.get('/', (request, response) => {
   response.json(issues)
 })
 
-app.post('/api/issues', (request, response) => {
+app.post('/api/v1/issues', (request, response) => {
   const issue = request.body
   console.log(issue)
   issue.id = issues.length + 1
@@ -31,7 +33,7 @@ app.post('/api/issues', (request, response) => {
   response.json(issue)
 })
 
-app.get('/api/issues/:id', (request, response) => {
+app.get('/api/v1/issues/:id', (request, response) => {
   const id = request.params.id
   const issue = issues.find(issue => issue.id === id)
   if (issue) {
@@ -41,7 +43,7 @@ app.get('/api/issues/:id', (request, response) => {
   }
 })
 
-app.put('/api/issues/:id', (request, response) => {
+app.put('/api/v1/issues/:id', (request, response) => {
   const id = request.params.id
   const updatedIssue = request.body
   console.log(updatedIssue)
@@ -49,7 +51,7 @@ app.put('/api/issues/:id', (request, response) => {
   response.json(updatedIssue)
 })
 
-app.delete('/api/issues/:id', (request, response) => {
+app.delete('/api/v1/issues/:id', (request, response) => {
   const id = request.params.id
   console.log(`Id to delete: ${id}`)
   issues = issues.filter(issue => issue.id !== id)

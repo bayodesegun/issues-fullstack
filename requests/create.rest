@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/v1/issues
+Content-Type: application/json
+
+{
+    "title": "test",
+    "description": "test"
+}

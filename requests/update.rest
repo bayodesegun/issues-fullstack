@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/v1/issues/1
+Content-Type: application/json
+
+{
+    "title": "2nd test",
+    "description": "2nd test"
+}
